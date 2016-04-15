@@ -165,7 +165,7 @@ public class Anagrams extends JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 20, 0);
         mainPanel.add(guessedWord, gridBagConstraints);
 
-        feedbackLabel.setText("aaaaaaaaaaaaaa");
+        feedbackLabel.setText("<html>Not Guilty<br>志村恵理<br>宗本優香<br>川村仁美<html>");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
