@@ -84,7 +84,7 @@ public class Anagrams extends JFrame {
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx,"レベル 1"));
         pack();
         guessedWord.requestFocusInWindow();
         // Center in the screen
@@ -255,9 +255,11 @@ public class Anagrams extends JFrame {
 
     private void nextTrialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextTrialActionPerformed
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
-
+        
         feedbackLabel.setText(" ");
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        String level = selectLevel.getSelectedItem().toString();
+        //int a =Character.getNumericValue(level.charAt(level.length()-1));
+        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx,level));
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
 

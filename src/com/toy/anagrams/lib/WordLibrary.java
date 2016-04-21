@@ -58,9 +58,10 @@ public abstract class WordLibrary {
     /**
      * Gets the word at a given index in its scrambled form.
      * @param idx index of required word
+     * @param level of shuffle
      * @return word at that index in its scrambled form
      */
-    public abstract String getScrambledWord(int idx);
+    public abstract String getScrambledWord(int idx,String level);
 
     /**
      * Gets the number of words in the library.
