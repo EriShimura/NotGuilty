@@ -31,6 +31,8 @@
 
 package com.toy.anagrams.lib;
 
+import java.util.Vector;
+
 /**
  * Implementation of the logic for the Anagram Game application.
  */
@@ -163,8 +165,32 @@ final class StaticWordLibrary extends WordLibrary {
      * @return word at that index in its scrambled form
      */
     public String getScrambledWord(int idx) {
-        return SCRAMBLED_WORD_LIST[idx];
-    }
+        	Vector<Character> WORD = new Vector<Character>();
+        	//System.out.println(WORD_LIST[idx]);
+        	 for(int i= 0; i<WORD_LIST[idx].length(); i++){
+        		 WORD.add(WORD_LIST[idx].toCharArray()[i]);
+                	//System.out.print(WORD_LIST[idx].toCharArray()[i]);//以下シャッフル
+        	 }
+        	 //System.out.println();
+        	 for(int j= WORD.size()-1; j>0; j--){        
+                int t = (int)(Math.random()*WORD.size());
+             // 同じVector内で j 番目と t 番目を交換
+                char obj1 = (char)WORD.elementAt(j);
+                char obj2 = (char)WORD.elementAt(t);
+                WORD.set( j, obj2);
+                WORD.set( t, obj1);
+                //System.out.println("Tは"+t+"Jは"+j);
+                //System.out.println("要素jは"+WORD.elementAt(j)+"と"+WORD.elementAt(t));
+            }
+        
+        	String answer = "";
+        	for(int i =0; i<WORD.size();i++ )
+        	answer += WORD.elementAt(i);
+        	//System.out.println(answer);
+        	return answer;
+            
+        }
+
 
     /**
      * Gets the number of words in the library.
