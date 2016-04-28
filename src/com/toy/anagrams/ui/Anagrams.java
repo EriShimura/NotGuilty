@@ -36,6 +36,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -272,10 +273,10 @@ public class Anagrams extends JFrame {
 
     private void guessedWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guessedWordActionPerformed
         if (wordLibrary.isCorrect(wordIdx, guessedWord.getText())){
-            feedbackLabel.setText("ピンポン！正解! 新しい言葉に挑戦だ！");
+            JOptionPane.showMessageDialog(null, "ピンポン！正解! 新しい言葉に挑戦だ！");
             getRootPane().setDefaultButton(nextTrial);
         } else {
-            feedbackLabel.setText("ブッブー！不正解！もう一回やれ！");
+            JOptionPane.showMessageDialog(null, "ブッブー！不正解！もう一回やれ！");
             guessedWord.setText("");
         }
 
