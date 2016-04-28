@@ -164,15 +164,26 @@ final class StaticWordLibrary extends WordLibrary {
      * @param idx index of required word
      * @return word at that index in its scrambled form
      */
-    public String getScrambledWord(int idx) {
+    public String getScrambledWord(int idx,String levelS) {
         	Vector<Character> WORD = new Vector<Character>();
         	//System.out.println(WORD_LIST[idx]);
+        	int roop=0;
+        	//"レベル 1", "レベル 2", "レベル 3"
+        	if(levelS.equals("レベル 1"))roop=1;
+        	if(levelS.equals("レベル 2"))roop=2;
+        	if(levelS.equals("レベル 3"))roop=3;
+        	if(levelS.equals("レベル 4"))roop=4;
+        	if(levelS.equals("レベル 5"))roop=5;
+        	
         	 for(int i= 0; i<WORD_LIST[idx].length(); i++){
         		 WORD.add(WORD_LIST[idx].toCharArray()[i]);
                 	//System.out.print(WORD_LIST[idx].toCharArray()[i]);//以下シャッフル
         	 }
         	 //System.out.println();
-        	 for(int j= WORD.size()-1; j>0; j--){        
+        	 while(roop>0){
+        		 //System.out.println(roop);	
+        		 for(int j= WORD.size()-1; j>0; j--){     
+       
                 int t = (int)(Math.random()*WORD.size());
              // 同じVector内で j 番目と t 番目を交換
                 char obj1 = (char)WORD.elementAt(j);
@@ -181,8 +192,9 @@ final class StaticWordLibrary extends WordLibrary {
                 WORD.set( t, obj1);
                 //System.out.println("Tは"+t+"Jは"+j);
                 //System.out.println("要素jは"+WORD.elementAt(j)+"と"+WORD.elementAt(t));
-            }
-        
+            }	
+        	 roop--;
+        	 }
         	String answer = "";
         	for(int i =0; i<WORD.size();i++ )
         	answer += WORD.elementAt(i);
