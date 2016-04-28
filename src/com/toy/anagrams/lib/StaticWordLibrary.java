@@ -172,6 +172,8 @@ final class StaticWordLibrary extends WordLibrary {
         	if(levelS.equals("レベル 1"))roop=1;
         	if(levelS.equals("レベル 2"))roop=2;
         	if(levelS.equals("レベル 3"))roop=3;
+        	if(levelS.equals("レベル 4"))roop=4;
+        	if(levelS.equals("レベル 5"))roop=5;
         	
         	 for(int i= 0; i<WORD_LIST[idx].length(); i++){
         		 WORD.add(WORD_LIST[idx].toCharArray()[i]);
